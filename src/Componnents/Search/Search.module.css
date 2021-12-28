@@ -1,0 +1,38 @@
+.form {
+  max-width: 380px;
+  width: 80%;
+}
+
+.searchbox {
+  position: relative;
+}
+
+.search {
+  font-size: 1rem;
+  height: 2rem;
+  padding: 5px 6px;
+  border: 0;
+  border-radius: 20px;
+  background-color: #ffffff33;
+  text-align: center;
+  width: 100%;
+}
+
+.search::placeholder {
+  color: #fff;
+}
+
+.btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 20px;
+  height: 2.5rem;
+  width: 2.5rem;
+  font-size: 1rem;
+  padding: 0px 10px;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
