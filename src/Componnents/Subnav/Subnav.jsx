@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../Subnav/Subnav.module.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 class Subnav extends React.Component {
   constructor(props) {
@@ -13,9 +13,12 @@ class Subnav extends React.Component {
       <div className={styles.subnav}>
         {items.map((name, i) => (
           <div className={styles.item} key={i}>
-            <Link to="#" className={styles.link}>
+            <NavLink
+              to={name}
+              className={styles.link}
+            >
               {name}
-            </Link>
+            </NavLink>
           </div>
         ))}
       </div>

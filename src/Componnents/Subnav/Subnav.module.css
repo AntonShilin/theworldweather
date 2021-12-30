@@ -9,11 +9,14 @@
 
 .item {
   margin-right: 1rem;
-  height: 2.5rem;
   display: inline-block;
   padding: 10px 0;
   border-bottom: 2px solid #0000;
   text-align: center;
+}
+
+.active{
+    border-bottom: 2px solid #fff !important;
 }
 
 .link {
@@ -21,3 +24,4 @@
   color: #fff;
   text-decoration: none;
 }
+
