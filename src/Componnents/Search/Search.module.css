@@ -1,6 +1,5 @@
 .form {
   max-width: 380px;
-  width: 80%;
 }
 
 .searchbox {
@@ -16,6 +15,13 @@
   background-color: #ffffff33;
   text-align: center;
   width: 100%;
+}
+
+.search:focus {
+  outline: none;
+}
+.search::placeholder {
+  color: transparent !important;
 }
 
 .search::placeholder {
