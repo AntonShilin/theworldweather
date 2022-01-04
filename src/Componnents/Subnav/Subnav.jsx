@@ -5,19 +5,23 @@ import { NavLink } from "react-router-dom";
 class Subnav extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { items: ["today", "hourly", "5 day", "air quality"] };
+    this.state = {
+      items: [
+        { name: "today", url: "today" },
+        { name: "hourly", url: "hourly" },
+        { name: "5 day", url: "fiveday" },
+        { name: "air quality", url: "airquality" },
+      ],
+    };
   }
   render() {
     const { items } = this.state;
     return (
       <div className={styles.subnav}>
-        {items.map((name, i) => (
+        {items.map((obj, i) => (
           <div className={styles.item} key={i}>
-            <NavLink
-              to={name}
-              className={styles.link}
-            >
-              {name}
+            <NavLink to={obj.url} className={styles.link}>
+              {obj.name}
             </NavLink>
           </div>
         ))}

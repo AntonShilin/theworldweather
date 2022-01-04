@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Footer.module.css";
 
-class Footer extends Component {
+class Footer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

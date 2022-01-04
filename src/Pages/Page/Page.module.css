@@ -1,0 +1,14 @@
+.page {
+  background-color: #052668;
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 1500px;
+  min-height: 45vh;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* justify-content: space-between; */
+}
+
+.page p {
+  color: #fff;
+}
