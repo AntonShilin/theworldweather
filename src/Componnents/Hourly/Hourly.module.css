@@ -1,0 +1,23 @@
+.hourly {
+  padding-bottom: 1rem;
+  width: 75%;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 12px 0 #0003;
+  min-height: 3rem;
+}
+
+.hourly div:nth-of-type() {
+}
+
+.hourly div:nth-of-type() h1 {
+  color: #2b2b2b;
+  padding: 16px 26px;
+}
+
+.hourly div:nth-of-type() h1 div {
+  padding: 0 26px 21px;
+  font-size: 1rem;
+  opacity: 0.65;
+  color: #2d2d2d;
+}

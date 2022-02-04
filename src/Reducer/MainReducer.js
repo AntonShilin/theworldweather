@@ -1,14 +1,15 @@
-
+import { GETLATESTNEWS } from "../Types/MainTypes";
 
 const mainState = {
-
+latestNews: null
 };
 
 export const mainReducer = (state = mainState, action) => {
   switch (action.type) {
-    case "1": {
+    case GETLATESTNEWS: {
       return {
         ...state,
+        latestNews: action.payload
       };
     }
 

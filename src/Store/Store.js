@@ -1,13 +1,13 @@
-import { combineReducers, createStore } from "redux";
+import { combineReducers } from "redux";
 import { mainReducer } from "../Reducer/MainReducer.js";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 
-const rootReducer = combineReducers({
-    main: mainReducer,
-  });
-  
-  
-  export default function configureStore(){
-    const store = createStore(rootReducer);
-    store.subscribe(() => console.log("Store subscribe",store.getState()))
-    return store;
-  }
+export const rootReducer = combineReducers({
+  main: mainReducer,
+});
+
+export default function configureStore() {
+  const store = createStore(rootReducer, undefined, applyMiddleware(thunk));
+  return store;
+}
