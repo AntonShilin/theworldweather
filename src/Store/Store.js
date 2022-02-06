@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import { mainReducer } from "../Reducer/MainReducer.js";
+import { latestNewsReducer } from "../Reducer/LatestNewsReducer.js";
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
 export const rootReducer = combineReducers({
-  main: mainReducer,
+  news: latestNewsReducer,
 });
 
 export default function configureStore() {

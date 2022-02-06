@@ -1,0 +1,16 @@
+.image{
+    width: 100%;
+    height: 10rem;
+    box-sizing: border-box;
+    background: url("https://dummyimage.com/25х25/ebd9eb/3b3bbd.png&text=Not+image") no-repeat center center;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 0.5rem 0 0.5rem 0;
+    cursor: pointer;
+    margin: 0 auto;
+  }

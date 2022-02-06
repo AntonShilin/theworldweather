@@ -1,4 +1,4 @@
-import { GETLATESTNEWS } from "../Types/MainTypes";
+import { GETLATESTNEWS } from "../Types/LatestNewsTypes";
 
 export function fetchLatestNews() {
   return (dispatch) => {

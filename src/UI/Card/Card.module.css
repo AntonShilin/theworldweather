@@ -34,15 +34,6 @@
   color: #3030ec;
 }
 
-.card_img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  margin: 0.5rem 0 0.5rem 0;
-  cursor: pointer;
-}
-
 @media screen and (max-width: 725px) {
   .card {
     padding: 1rem !important;

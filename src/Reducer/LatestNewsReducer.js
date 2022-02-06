@@ -1,10 +1,10 @@
-import { GETLATESTNEWS } from "../Types/MainTypes";
+import { GETLATESTNEWS } from "../Types/LatestNewsTypes";
 
-const mainState = {
+const latestNewsState = {
 latestNews: null
 };
 
-export const mainReducer = (state = mainState, action) => {
+export const latestNewsReducer = (state = latestNewsState, action) => {
   switch (action.type) {
     case GETLATESTNEWS: {
       return {

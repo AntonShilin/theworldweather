@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./News.module.css";
 import { connect } from "react-redux";
-import { fetchLatestNews } from "../../Actions/MainActions";
+import { fetchLatestNews } from "../../Actions/LatestNewsActions";
 import Card from "../../UI/Card/Card";
 import Alert from "../../UI/Card/Alert/Alert";
 
@@ -9,7 +9,7 @@ class News extends React.Component {
   componentDidMount() {
     const { latestNews } = this.props;
     if (latestNews === null) {
-      // this.props.getLatestNews();
+      this.props.getLatestNews();
     }
   }
 
@@ -28,7 +28,7 @@ class News extends React.Component {
             </div>
           ))
         ) : (
-          <Alert/>
+          <Alert />
         )}
       </div>
     );
@@ -36,7 +36,7 @@ class News extends React.Component {
 }
 
 const mapStateToProps = (store) => ({
-  latestNews: store.main.latestNews,
+  latestNews: store.news.latestNews,
 });
 
 const mapDispatchToProps = (dispatch) => {
