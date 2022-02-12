@@ -1,35 +1,45 @@
 import React from "react";
 import style from "./Image.module.css";
 import Spinner from "../Spinner/Spinner";
+import Alert from "../Alert/Alert";
 
 class Image extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { imageStatus: false, imageLoadedError: false };
+    this.state = { imageStatus: "loading" };
+    this.handleImageLoaded = this.handleImageLoaded.bind(this);
+    this.handleImageErrored = this.handleImageErrored.bind(this);
   }
 
-  handleImageLoaded = () => {
-    this.setState({ imageStatus: true });
-  };
+  handleImageLoaded() {
+    this.setState({ imageStatus: "loaded" });
+  }
 
-  handleImageErrored = () => {
-    this.setState({ imageStatus: false, imageLoadedError: false });
-  };
+  handleImageErrored() {
+    this.setState({ imageStatus: "failed to load" });
+  }
 
   render() {
     const { imageStatus } = this.state;
+    const { urlToImage } = this.props;
+
+   if (imageStatus === "failed to load") {
+      return (
+        <div className={style.image}>
+          <Alert />
+        </div>
+      );
+    }
+
     return (
       <div className={style.image}>
-        {imageStatus ? (
-          <img
-            alt="img"
-            src={this.props.urlToImage}
-            onLoad={this.handleImageLoaded}
-            onError={this.handleImageErrored}
-          />
-        ) : (
-          <Spinner />
-        )}
+        {imageStatus === "loading" && <Spinner />}
+        <img
+          alt="img"
+          src={urlToImage}
+          onLoad={this.handleImageLoaded}
+          onError={this.handleImageErrored}
+        />
       </div>
     );
   }

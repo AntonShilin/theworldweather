@@ -5,7 +5,8 @@ function Alert() {
   return (
     <div className={style.alert}>
       <p>
-        <strong>Sorry, no new news!</strong> Please try later!!!
+        <span>Sorry, no new news.</span>
+        Please try later.
       </p>
     </div>
   );

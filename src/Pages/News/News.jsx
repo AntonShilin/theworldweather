@@ -14,10 +14,21 @@ class News extends React.Component {
   }
 
   render() {
+    if (
+      this.props.latestNews !== null &&
+      this.props.latestNews.totalResults === 0
+    ) {
+      return (
+        <div className={styles.news}>
+          <Alert />
+        </div>
+      );
+    }
+
     return (
       <div className={styles.news}>
         {this.props.latestNews !== null &&
-        this.props.latestNews.totalResults > 0 ? (
+          this.props.latestNews.totalResults > 0 &&
           this.props.latestNews.articles.map((article, i) => (
             <div key={i}>
               <Card
@@ -26,10 +37,7 @@ class News extends React.Component {
                 urlToImage={article.urlToImage}
               />
             </div>
-          ))
-        ) : (
-          <Alert />
-        )}
+          ))}
       </div>
     );
   }

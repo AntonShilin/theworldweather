@@ -4,16 +4,18 @@ import { Link } from "react-router-dom";
 import Image from "./Image/Image";
 
 class Card extends React.Component {
-  state = {};
   render() {
     const { title, description, urlToImage } = this.props;
+
     return (
       <div className={styles.card}>
         <h1>
           <Link to="#">{title}</Link>
         </h1>
-        <Image urlToImage={urlToImage}/>
-        <Link to="#">{description}</Link>
+        <Image urlToImage={urlToImage} />
+        <p>
+          <Link to="#">{description}</Link>
+        </p>
       </div>
     );
   }
