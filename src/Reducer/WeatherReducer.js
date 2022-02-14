@@ -1,26 +1,36 @@
 import {
-  GETCURRENTPOSITIONWEATHER,
+  GETCURRENTCITYWEATHER,
   GETCURRENTPOSITION,
+  GETCURRENTPOSITIONIP,
 } from "../Types/WeatherTypes";
 
 const weatherState = {
-  currentPositionWeather: null,
-  coords: null,
+  currentCityWeather: null,
+  currentCoords: null,
+  ip: null
 };
 
 export const weatherReducer = (state = weatherState, action) => {
   switch (action.type) {
-    case GETCURRENTPOSITIONWEATHER: {
+    case GETCURRENTCITYWEATHER: {
       return {
         ...state,
-        currentPositionWeather: action.payload,
+        currentCityWeather: action.payload,
       };
     }
 
     case GETCURRENTPOSITION: {
       return {
         ...state,
-        coords: action.payload,
+        currentCoords: action.payload,
+      };
+    }
+      
+      
+    case GETCURRENTPOSITIONIP: {
+      return {
+        ...state,
+        ip: action.payload,
       };
     }
 

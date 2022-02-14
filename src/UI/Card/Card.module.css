@@ -34,7 +34,7 @@
   color: #3030ec;
 }
 
-@media screen and (max-width: 725px) {
+@media screen and (max-width: 770px) {
   .card {
     padding: 1rem !important;
     width: 100% !important;

@@ -23,17 +23,10 @@ class Image extends React.Component {
     const { imageStatus } = this.state;
     const { urlToImage } = this.props;
 
-   if (imageStatus === "failed to load") {
-      return (
-        <div className={style.image}>
-          <Alert />
-        </div>
-      );
-    }
-
     return (
       <div className={style.image}>
         {imageStatus === "loading" && <Spinner />}
+        {imageStatus === "failed to load" && <Alert />}
         <img
           alt="img"
           src={urlToImage}
