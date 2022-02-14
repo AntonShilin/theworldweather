@@ -2,15 +2,15 @@ import {
   GETCURRENTCITYWEATHER,
   GETCURRENTPOSITION,
   GETCURRENTPOSITIONIP,
-} from "../Types/WeatherTypes";
+} from "../Types/LocationTypes";
 
-const weatherState = {
+const locationState = {
   currentCityWeather: null,
   currentCoords: null,
   ip: null
 };
 
-export const weatherReducer = (state = weatherState, action) => {
+export const locationReducer = (state = locationState, action) => {
   switch (action.type) {
     case GETCURRENTCITYWEATHER: {
       return {

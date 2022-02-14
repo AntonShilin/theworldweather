@@ -2,7 +2,7 @@ import {
   GETCURRENTCITYWEATHER,
   GETCURRENTPOSITION,
   GETCURRENTPOSITIONIP,
-} from "../Types/WeatherTypes";
+} from "../Types/LocationTypes";
 
 export const getCurrentCityWeather = (lat, lon) => {
   return (dispatch) =>

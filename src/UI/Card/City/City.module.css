@@ -1,0 +1,25 @@
+.city {
+    border-right: 1px solid #ffffff33;
+    width: 10rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  .city div {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .city div a {
+    padding: 0 .5rem 0 0;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+  }
+  

@@ -2,11 +2,11 @@ import { combineReducers } from "redux";
 import { latestNewsReducer } from "../Reducer/LatestNewsReducer.js";
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import { weatherReducer } from "../Reducer/WeatherReducer.js";
+import { locationReducer } from "../Reducer/LocationReducer.js";
 
 export const rootReducer = combineReducers({
   news: latestNewsReducer,
-  info: weatherReducer
+  location: locationReducer
 });
 
 export default function configureStore() {
