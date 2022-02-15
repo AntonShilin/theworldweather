@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Card.module.css";
 import { Link } from "react-router-dom";
-import Image from "./Image/Image";
+import Image from "../Image/Image.jsx";
 
 class Card extends React.Component {
   render() {

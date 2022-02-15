@@ -3,7 +3,7 @@ import styles from "./News.module.css";
 import { connect } from "react-redux";
 import { fetchLatestNews } from "../../Actions/LatestNewsActions";
 import Card from "../../UI/Card/Card";
-import Alert from "../../UI/Card/Alert/Alert";
+import Alert from "../../UI/Alert/Alert";
 
 class News extends React.Component {
   componentDidMount() {

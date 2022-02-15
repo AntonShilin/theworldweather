@@ -2,15 +2,15 @@ import React from "react";
 import { connect } from "react-redux";
 import { getCurrentCityWeather } from "../../Actions/LocationActions";
 import style from "./CurrentLocation.module.css";
-import City from "../../UI/Card/City/City";
+import City from "../../UI/City/City";
 
 class CurrentLocation extends React.Component {
   componentDidUpdate(prevProps) {
     if (prevProps.currentCoords !== this.props.currentCoords) {
       const { longitude, latitude } = this.props.currentCoords.coords;
-      this.props.getCurrentCityWeather(latitude, longitude);
+      // this.props.getCurrentCityWeather(latitude, longitude);
     }
-    
+
     if (prevProps.currentIPAdressInfo !== this.props.currentIPAdressInfo) {
       const { longitude, latitude } = this.props.currentIPAdressInfo;
       this.props.getCurrentCityWeather(latitude, longitude);

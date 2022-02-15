@@ -15,7 +15,7 @@ class Nav extends React.Component {
       },
       (error) => {
         console.log("Error:", error);
-        this.props.getCurrentPositionIP();
+        // this.props.getCurrentPositionIP();
       }
     );
   }
