@@ -7,7 +7,7 @@ import {
 const locationState = {
   currentCityWeather: null,
   currentCoords: null,
-  ip: null
+  currentIPAdressInfo: null,
 };
 
 export const locationReducer = (state = locationState, action) => {
@@ -25,12 +25,11 @@ export const locationReducer = (state = locationState, action) => {
         currentCoords: action.payload,
       };
     }
-      
-      
+
     case GETCURRENTPOSITIONIP: {
       return {
         ...state,
-        ip: action.payload,
+        currentIPAdressInfo: action.payload
       };
     }
 

@@ -34,7 +34,7 @@ export const getCurrentPositionCoords = (position) => {
 export const getCurrentPositionIP = () => {
   return (dispatch) =>
     fetch(
-      "http://api.ipstack.com/check?access_key=619b6eb00393dffb67164bab90fbf55a"
+      'https://api.freegeoip.app/json/?apikey=a0849100-8e58-11ec-a011-29bbdebcde3c'
     )
       .then((response) => {
         if (!response.ok) {

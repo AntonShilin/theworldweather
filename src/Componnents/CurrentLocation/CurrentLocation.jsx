@@ -5,25 +5,31 @@ import style from "./CurrentLocation.module.css";
 import City from "../../UI/Card/City/City";
 
 class CurrentLocation extends React.Component {
-
   componentDidUpdate(prevProps) {
     if (prevProps.currentCoords !== this.props.currentCoords) {
       const { longitude, latitude } = this.props.currentCoords.coords;
       this.props.getCurrentCityWeather(latitude, longitude);
     }
+    
+    if (prevProps.currentIPAdressInfo !== this.props.currentIPAdressInfo) {
+      const { longitude, latitude } = this.props.currentIPAdressInfo;
+      this.props.getCurrentCityWeather(latitude, longitude);
+    }
   }
+
 
   render() {
     if (this.props.currentCityWeather === null) {
-     return <div></div>
-   }
-    return <City weatherInfo={this.props.currentCityWeather} />
+      return <div></div>;
+    }
+    return <City weatherInfo={this.props.currentCityWeather} />;
   }
 }
 
 const mapStateToProps = (store) => ({
   currentCoords: store.location.currentCoords,
   currentCityWeather: store.location.currentCityWeather,
+  currentIPAdressInfo: store.location.currentIPAdressInfo
 });
 
 const mapDispatchToProps = (dispatch) => {
