@@ -1,6 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getCurrentCityWeather } from "../../Actions/LocationActions";
+import {
+  getDailyWeatherByCoords,
+  getCityNameByCoords,
+} from "../../Actions/LocationActions";
 import style from "./CurrentLocation.module.css";
 import City from "../../UI/City/City";
 
@@ -8,34 +11,36 @@ class CurrentLocation extends React.Component {
   componentDidUpdate(prevProps) {
     if (prevProps.currentCoords !== this.props.currentCoords) {
       const { longitude, latitude } = this.props.currentCoords.coords;
-      // this.props.getCurrentCityWeather(latitude, longitude);
+      this.props.getDailyWeatherByCoords(latitude, longitude);
+      this.props.getCityNameByCoords(latitude, longitude);
     }
 
     if (prevProps.currentIPAdressInfo !== this.props.currentIPAdressInfo) {
       const { longitude, latitude } = this.props.currentIPAdressInfo;
-      this.props.getCurrentCityWeather(latitude, longitude);
+      // this.props.getCurrentCityWeather(latitude, longitude);
     }
   }
 
-
   render() {
-    if (this.props.currentCityWeather === null) {
-      return <div></div>;
+    if (this.props.dailyWeather === null || this.props.cityName === null) {
+      return null;
     }
-    return <City weatherInfo={this.props.currentCityWeather} />;
+    return <City dailyWeatherInfo={this.props.dailyWeather} cityName={this.props.cityName} />;
   }
 }
 
 const mapStateToProps = (store) => ({
   currentCoords: store.location.currentCoords,
-  currentCityWeather: store.location.currentCityWeather,
-  currentIPAdressInfo: store.location.currentIPAdressInfo
+  cityName: store.location.cityName,
+  dailyWeather: store.location.dailyWeather,
+  currentIPAdressInfo: store.location.currentIPAdressInfo,
 });
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getCurrentCityWeather: (lat, lon) =>
-      dispatch(getCurrentCityWeather(lat, lon)),
+    getDailyWeatherByCoords: (lat, lon) =>
+      dispatch(getDailyWeatherByCoords(lat, lon)),
+    getCityNameByCoords: (lat, lon) => dispatch(getCityNameByCoords(lat, lon)),
   };
 };
 

@@ -5,7 +5,9 @@ class Clock extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      time: new Date().toLocaleString(),
+      day: new Date().getDay(),
+      month: new Date().getMonth(),
+      year: new Date().getFullYear(),
     };
   }
 
@@ -19,12 +21,19 @@ class Clock extends React.Component {
 
   tick() {
     this.setState({
-      time: new Date().toLocaleString(),
+      day: new Date().getDay(),
+      month: new Date().getMonth(),
+      year: new Date().getFullYear(),
     });
   }
 
   render() {
-    return <span className={style.clock}>{this.state.time}.</span>;
+    const { day, month, year } = this.state;
+    return (
+      <span className={style.clock}>
+        {day}.{month + 1}.{year}
+      </span>
+    );
   }
 }
 

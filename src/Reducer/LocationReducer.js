@@ -1,21 +1,31 @@
 import {
-  GETCURRENTCITYWEATHER,
+  GETDAILYWEATHERBYCOORDS,
   GETCURRENTPOSITION,
   GETCURRENTPOSITIONIP,
+  GETCITYNAMEBYCOORDS,
 } from "../Types/LocationTypes";
 
 const locationState = {
-  currentCityWeather: null,
+  dailyWeather: null,
+  cityName: null,
   currentCoords: null,
   currentIPAdressInfo: null,
 };
 
 export const locationReducer = (state = locationState, action) => {
   switch (action.type) {
-    case GETCURRENTCITYWEATHER: {
+    case GETDAILYWEATHERBYCOORDS: {
       return {
         ...state,
-        currentCityWeather: action.payload,
+        dailyWeather: action.payload.daily[0],
+      };
+    }
+
+    case GETCITYNAMEBYCOORDS: {
+      const { name, sys } = action.payload;
+      return {
+        ...state,
+        cityName: { name, sys },
       };
     }
 
@@ -29,7 +39,7 @@ export const locationReducer = (state = locationState, action) => {
     case GETCURRENTPOSITIONIP: {
       return {
         ...state,
-        currentIPAdressInfo: action.payload
+        currentIPAdressInfo: action.payload,
       };
     }
 

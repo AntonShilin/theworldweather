@@ -3,11 +3,12 @@
   box-sizing: border-box;
   border-radius: 6px;
   box-shadow: 0 0 12px 0 rgb(0 0 0 / 20%);
+  max-width: 75%;
 }
 
 .today_header {
   padding: 10px 16px;
-  background-color: #0000008c;
+  background-color: #0000003b;
   border-radius: 6px 6px 0 0;
 }
 
@@ -15,7 +16,7 @@
   font-weight: 600;
   font-size: 1.2rem;
   color: #fff;
-  margin:  0;
+  margin: 0;
 }
 
 .main {
@@ -37,11 +38,13 @@
   font-weight: 600;
   line-height: 1.1;
   color: #fff;
+  text-transform: capitalize;
+  margin: .25rem 0 .25rem 0;
 }
 
 .main_left div:last-of-type {
-  margin-top: 5px;
 }
+
 .main_left div:last-of-type span {
   line-height: 1.1;
   font-size: 1.125rem;
@@ -49,7 +52,12 @@
   color: #fff;
 }
 
-.main_right img{
-    max-width: 150px;
-    max-height: 150px;
+.main_right {
+  display: flex;
+  align-items: center;
+}
+
+.main_right img {
+ width: 100%;
+ height: auto;
 }

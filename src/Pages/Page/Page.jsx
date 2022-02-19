@@ -4,13 +4,19 @@ import { useParams } from "react-router-dom";
 import Today from "../../Componnents/Today/Today";
 
 function Page() {
-  
   let { id } = useParams();
+
+  if (id === "today") {
+    return (
+      <div className={styles.page}>
+        <Today />
+      </div>
+    );
+  }
 
   return (
     <div className={styles.page}>
       <p>{id}</p>
-      {id === "today" && <Today />}
     </div>
   );
 }
