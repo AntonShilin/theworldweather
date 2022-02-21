@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 
 class Today extends React.Component {
   render() {
-    if (this.props.dailyWeather === null) {
+    if (this.props.dailyWeather === null || this.props.cityName === null) {
       return null;
     }
 

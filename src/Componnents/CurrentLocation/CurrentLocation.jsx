@@ -11,8 +11,8 @@ class CurrentLocation extends React.Component {
   componentDidUpdate(prevProps) {
     if (prevProps.currentCoords !== this.props.currentCoords) {
       const { longitude, latitude } = this.props.currentCoords.coords;
-      this.props.getDailyWeatherByCoords(latitude, longitude);
-      this.props.getCityNameByCoords(latitude, longitude);
+      // this.props.getDailyWeatherByCoords(latitude, longitude);
+      // this.props.getCityNameByCoords(latitude, longitude);
     }
 
     if (prevProps.currentIPAdressInfo !== this.props.currentIPAdressInfo) {

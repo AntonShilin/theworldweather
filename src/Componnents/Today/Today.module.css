@@ -4,6 +4,7 @@
   border-radius: 6px;
   box-shadow: 0 0 12px 0 rgb(0 0 0 / 20%);
   max-width: 75%;
+  background-color: darkslateblue;
 }
 
 .today_header {
