@@ -2,9 +2,10 @@
   height: 100%;
   box-sizing: border-box;
   border-radius: 6px;
-  box-shadow: 0 0 12px 0 rgb(0 0 0 / 20%);
+  box-shadow: 0 0 12px 0 #00000033;
   max-width: 75%;
-  background-color: rgb(126, 112, 218);
+  background-color: #7e70da;
+  margin-top: 1rem;
 }
 
 .todays_forecast header {
@@ -20,38 +21,47 @@
   margin: 0;
 }
 
-.todays_forecast_main div ul {
+.todays_forecast_main ul {
   padding: 0 8px;
   display: flex;
   justify-content: center;
   list-style-type: none;
 }
 
-.todays_forecast_main div ul li {
+.todays_forecast_main ul li:first-child {
+  padding-left: 0;
+}
+
+.todays_forecast_main ul li:last-of-type {
+  border: none;
+}
+
+.todays_forecast_main ul li {
   padding: 0 15px;
   border-width: 0 1px 0 0;
   border-style: solid;
   border-image: linear-gradient(
       180deg,
-      hsla(0, 0%, 87.1%, 0) 0,
+      #dedede00 0,
       #dedede 25%,
       #dedede 70%,
-      hsla(0, 0%, 87.1%, 0) 85%,
-      hsla(0, 0%, 87.1%, 0)
+      #dedede00 85%,
+      #dedede00
     )
     1 100%;
 }
-.todays_forecast_main div ul li a {
+
+.todays_forecast_main ul li a {
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   flex-direction: column;
   font-weight: 400;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
-.todays_forecast_main div ul li a h3 {
+.todays_forecast_main ul li a h3 {
   font-weight: 700;
   font-size: 1.125rem;
   line-height: 1.66em;
