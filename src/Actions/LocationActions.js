@@ -8,7 +8,7 @@ import {
 export const getDailyWeatherByCoords = (lat, lon) => {
   return (dispatch) =>
     fetch(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=current,minutely,hourly&appid=6f9efbe15879cba2437b95d10e5fc2a6`
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=current,minutely&appid=6f9efbe15879cba2437b95d10e5fc2a6`
       // `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=6f9efbe15879cba2437b95d10e5fc2a6&units=metric`
     )
       .then((response) => {

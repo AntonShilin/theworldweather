@@ -4,7 +4,6 @@ import {
   getDailyWeatherByCoords,
   getCityNameByCoords,
 } from "../../Actions/LocationActions";
-import style from "./CurrentLocation.module.css";
 import City from "../../UI/City/City";
 
 class CurrentLocation extends React.Component {
@@ -22,17 +21,17 @@ class CurrentLocation extends React.Component {
   }
 
   render() {
-    if (this.props.dailyWeather === null || this.props.cityName === null) {
+    if (this.props.todaysWeather === null || this.props.cityName === null) {
       return null;
     }
-    return <City dailyWeatherInfo={this.props.dailyWeather} cityName={this.props.cityName} />;
+    return <City todaysWeatherInfo={this.props.todaysWeather} cityName={this.props.cityName} />;
   }
 }
 
 const mapStateToProps = (store) => ({
   currentCoords: store.location.currentCoords,
   cityName: store.location.cityName,
-  dailyWeather: store.location.dailyWeather,
+  todaysWeather: store.location.todaysWeather,
   currentIPAdressInfo: store.location.currentIPAdressInfo,
 });
 

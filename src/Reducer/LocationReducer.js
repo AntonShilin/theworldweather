@@ -6,7 +6,9 @@ import {
 } from "../Types/LocationTypes";
 
 const locationState = {
+  todaysWeather: null,
   dailyWeather: null,
+  hourlyWeather: null,
   cityName: null,
   currentCoords: null,
   currentIPAdressInfo: null,
@@ -17,7 +19,9 @@ export const locationReducer = (state = locationState, action) => {
     case GETDAILYWEATHERBYCOORDS: {
       return {
         ...state,
-        dailyWeather: action.payload.daily[0],
+        todaysWeather: action.payload.daily[0],
+        dailyWeather: action.payload.daily,
+        hourlyWeather: action.payload.hourly
       };
     }
 

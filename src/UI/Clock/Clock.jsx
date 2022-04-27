@@ -5,9 +5,8 @@ class Clock extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      day: new Date().getDay(),
-      month: new Date().getMonth(),
-      year: new Date().getFullYear(),
+      hours: new Date().getHours(),
+      minutes: new Date().getMinutes(),
     };
   }
 
@@ -21,17 +20,16 @@ class Clock extends React.Component {
 
   tick() {
     this.setState({
-      day: new Date().getDay(),
-      month: new Date().getMonth(),
-      year: new Date().getFullYear(),
+      hours: new Date().getHours(),
+      minutes: new Date().getMinutes(),
     });
   }
 
   render() {
-    const { day, month, year } = this.state;
+    const { hours, minutes } = this.state;
     return (
       <span className={style.clock}>
-        {day}.{month + 1}.{year}
+        {hours}:{minutes}
       </span>
     );
   }

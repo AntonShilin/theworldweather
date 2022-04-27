@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 
 class Today extends React.Component {
   render() {
-    if (this.props.dailyWeather === null || this.props.cityName === null) {
+    if (this.props.todaysWeather === null || this.props.cityName === null) {
       return null;
     }
 
@@ -14,28 +14,29 @@ class Today extends React.Component {
         <div className={style.today_header}>
           <h1>
             {this.props.cityName.name}, {this.props.cityName.sys.country}{" "}
-            <Clock />
+            As of <Clock />
           </h1>
         </div>
         <section className={style.main}>
           <div className={style.main_left}>
             <span>
-              {Math.round(this.props.dailyWeather.temp.max)}
+              {Math.round(this.props.todaysWeather.temp.max)}
               &#176;
             </span>
-            <div>{this.props.dailyWeather.weather[0].description}</div>
+            <div>{this.props.todaysWeather.weather[0].description}</div>
             <div>
               <span>
-                Day {Math.round(this.props.dailyWeather.temp.day)} &#176;
+                Day {Math.round(this.props.todaysWeather.temp.day)} &#176;
               </span>
+              <span>&middot;</span>
               <span>
-                Night {Math.round(this.props.dailyWeather.temp.night)} &#176;
+                Night {Math.round(this.props.todaysWeather.temp.night)} &#176;
               </span>
             </div>
           </div>
           <div className={style.main_right}>
             <img
-              src={`http://openweathermap.org/img/wn/${this.props.dailyWeather.weather[0].icon}@2x.png`}
+              src={`http://openweathermap.org/img/wn/${this.props.todaysWeather.weather[0].icon}@2x.png`}
               alt="icon"
             />
           </div>
@@ -46,7 +47,7 @@ class Today extends React.Component {
 }
 
 const mapStateToProps = (store) => ({
-  dailyWeather: store.location.dailyWeather,
+  todaysWeather: store.location.todaysWeather,
   cityName: store.location.cityName,
 });
 
