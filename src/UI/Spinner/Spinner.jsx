@@ -5,7 +5,16 @@ class Spinner extends React.Component {
   render() {
     return (
       <div className={style.spinner}>
-        <div className={style.lds_facebook}>
+        <div className={style.lds_spinner}>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
           <div></div>
           <div></div>
           <div></div>

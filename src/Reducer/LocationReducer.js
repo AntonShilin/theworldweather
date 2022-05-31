@@ -17,6 +17,7 @@ const locationState = {
 export const locationReducer = (state = locationState, action) => {
   switch (action.type) {
     case GETDAILYWEATHERBYCOORDS: {
+      console.log(action.payload)
       return {
         ...state,
         todaysWeather: action.payload.daily[0],

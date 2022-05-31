@@ -35,7 +35,7 @@ class TodaysForecast extends Component {
                     </div>
                     <div>
                       {this.props.todaysWeather.rain ? (
-                        <span>Rain {this.props.todaysWeather.rain}%</span>
+                        <span>Rain {Math.round(this.props.todaysWeather.rain * 100)}%</span>
                       ) : (
                         <span>---</span>
                       )}

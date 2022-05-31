@@ -5,6 +5,12 @@ import { Link } from "react-router-dom";
 
 class DailyForecast extends Component {
   state = {};
+
+  convertMillToDate(value) {
+    const dateInMs = value;
+    const date = new Date(dateInMs);
+  }
+
   render() {
     if (this.props.dailyWeather === null) {
       return null;
@@ -22,7 +28,7 @@ class DailyForecast extends Component {
                 i < 4 && (
                   <li key={i}>
                     <Link to="#">
-                      <h3>{day.dt}</h3>
+                      <h3>{ new Date(day.dt).toLocaleDateString()}</h3>
                       <div>
                         <span>{day.temp.max}&#176;</span>
                         <span>{day.temp.min}&#176;</span>
@@ -35,7 +41,7 @@ class DailyForecast extends Component {
                       </div>
                       <div>
                         {day.rain ? (
-                          <span>Rain {day.rain}%</span>
+                          <span>Rain {Math.round(day.rain * 100)}%</span>
                         ) : (
                           <span>---</span>
                         )}

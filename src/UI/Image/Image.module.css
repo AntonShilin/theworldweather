@@ -7,6 +7,7 @@
   justify-content: center;
   border: 1px solid #d1dcdf52;
   border-radius: 6px;
+  background-color: #cfcaca42;
 }
 
 .image img {
@@ -15,4 +16,9 @@
   height: auto;
   border-radius: 6px;
   cursor: pointer;
+}
+
+p {
+  text-align: center;
+  color: blue;
 }

@@ -1,7 +1,6 @@
 import React from "react";
 import style from "./Image.module.css";
 import Spinner from "../Spinner/Spinner";
-import Alert from "../Alert/Alert";
 
 class Image extends React.Component {
   constructor(props) {
@@ -23,10 +22,20 @@ class Image extends React.Component {
     const { imageStatus } = this.state;
     const { urlToImage } = this.props;
 
+
+    if (imageStatus === "failed to load") {
+      return (
+        <div className={style.image}>
+          <div className={style.failed_to_load}>
+            <p>No image</p>
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div className={style.image}>
         {imageStatus === "loading" && <Spinner />}
-        {imageStatus === "failed to load" && <Alert />}
         <img
           alt="img"
           src={urlToImage}

@@ -9,14 +9,16 @@ class News extends React.Component {
   componentDidMount() {
     const { latestNews } = this.props;
     if (latestNews === null) {
-      this.props.getLatestNews();
+      // this.props.getLatestNews();
     }
   }
 
   render() {
+
     if (
-      this.props.latestNews !== null &&
-      this.props.latestNews.totalResults === 0
+      (this.props.latestNews !== null &&
+        this.props.latestNews.totalResults === 0) ||
+      this.props.latestNews === null
     ) {
       return (
         <div className={styles.news}>
