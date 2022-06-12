@@ -16,7 +16,7 @@ class CurrentLocation extends React.Component {
 
     if (prevProps.currentIPAdressInfo !== this.props.currentIPAdressInfo) {
       const { longitude, latitude } = this.props.currentIPAdressInfo;
-      // this.props.getCurrentCityWeather(latitude, longitude);
+      this.props.getCurrentCityWeather(latitude, longitude);
     }
   }
 
@@ -24,7 +24,13 @@ class CurrentLocation extends React.Component {
     if (this.props.todaysWeather === null || this.props.cityName === null) {
       return null;
     }
-    return <City todaysWeatherInfo={this.props.todaysWeather} cityName={this.props.cityName} />;
+    return (
+      <City
+        key={0}
+        temp={this.props.todaysWeather.temp.max}
+        cityName={this.props.cityName.name}
+      />
+    );
   }
 }
 

@@ -2,19 +2,25 @@ import React from "react";
 import style from "./Today.module.css";
 import Clock from "../../UI/Clock/Clock";
 import { connect } from "react-redux";
+import Alert from "../../UI/Alert/Alert";
 
 class Today extends React.Component {
   render() {
     if (this.props.todaysWeather === null || this.props.cityName === null) {
-      return null;
+      return (
+        <Alert
+          msg={`${this.props.errorMessage}. 
+            Turn on geolocation in your browser settings or enter the name of the city`}
+        />
+      );
     }
 
     return (
       <div className={style.today}>
         <div className={style.today_header}>
           <h1>
-            {this.props.cityName.name}, {this.props.cityName.sys.country}{" "}
-            As of <Clock />
+            {this.props.cityName.name}, {this.props.cityName.sys.country} As of{" "}
+            <Clock />
           </h1>
         </div>
         <section className={style.main}>
@@ -49,6 +55,7 @@ class Today extends React.Component {
 const mapStateToProps = (store) => ({
   todaysWeather: store.location.todaysWeather,
   cityName: store.location.cityName,
+  errorMessage: store.location.errorMessage,
 });
 
 const mapDispatchToProps = (dispatch) => ({});

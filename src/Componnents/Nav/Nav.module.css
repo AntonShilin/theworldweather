@@ -6,4 +6,6 @@
   margin: 0 auto;
   line-height: 1rem;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
 }

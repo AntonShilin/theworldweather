@@ -4,15 +4,15 @@ import style from "./City.module.css";
 
 class City extends React.Component {
   render() {
-    const todaysWeatherInfo = this.props.todaysWeatherInfo;
-    const { name, sys } = this.props.cityName;
+    const temp = this.props.temp;
+    const name = this.props.cityName;
 
     return (
       <div className={style.city}>
         <div>
-          <Link to="#">{Math.round(todaysWeatherInfo.temp.max)}&#176;</Link>
+          <Link to="#">{Math.round(temp)}&#176;</Link>
           <Link to="#">
-            {name}, {sys.country}
+            {name}
           </Link>
           {/* <Link to="#">{dailyWeatherInfo.sys.country}</Link> */}
         </div>

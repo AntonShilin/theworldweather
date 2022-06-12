@@ -3,6 +3,7 @@ import {
   GETCURRENTPOSITION,
   GETCURRENTPOSITIONIP,
   GETCITYNAMEBYCOORDS,
+  GETERRORMESSAGE,
 } from "../Types/LocationTypes";
 
 export const getDailyWeatherByCoords = (lat, lon) => {
@@ -72,3 +73,10 @@ export const getCurrentPositionIP = () => {
         throw new Error(err);
       });
 };
+
+export const getErrorMessage = (value) => {
+  return {
+    type: GETERRORMESSAGE,
+    payload: value
+  }
+}

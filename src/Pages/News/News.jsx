@@ -14,7 +14,6 @@ class News extends React.Component {
   }
 
   render() {
-
     if (
       (this.props.latestNews !== null &&
         this.props.latestNews.totalResults === 0) ||
@@ -22,7 +21,7 @@ class News extends React.Component {
     ) {
       return (
         <div className={styles.news}>
-          <Alert />
+          <Alert msg={"Sorry, no new news."} />
         </div>
       );
     }

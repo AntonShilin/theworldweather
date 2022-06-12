@@ -5,7 +5,11 @@ import CurrentLocation from "../CurrentLocation/CurrentLocation";
 import {
   getCurrentPositionCoords,
   getCurrentPositionIP,
+  getErrorMessage
 } from "../../Actions/LocationActions";
+import RecentCities from "../RecentCities/RecentCities";
+
+
 
 class Nav extends React.Component {
   componentDidMount() {
@@ -16,6 +20,7 @@ class Nav extends React.Component {
       (error) => {
         console.log("Error:", error);
         // this.props.getCurrentPositionIP();
+        this.props.getErrorMessage(error.message)
       }
     );
   }
@@ -24,6 +29,7 @@ class Nav extends React.Component {
     return (
       <div className={style.nav}>
         <CurrentLocation />
+        <RecentCities/>
       </div>
     );
   }
@@ -36,6 +42,7 @@ const mapDispatchToProps = (dispatch) => {
     getCurrentPositionCoords: (position) =>
       dispatch(getCurrentPositionCoords(position)),
     getCurrentPositionIP: () => dispatch(getCurrentPositionIP()),
+    getErrorMessage: (value) => dispatch(getErrorMessage(value)),
   };
 };
 

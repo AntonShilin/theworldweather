@@ -12,7 +12,7 @@ function App() {
       <Header />
       <Nav />
       <Subnav />
-      <div>
+      <>
         <Routes>
           <Route path="/" element={<News />} />
           <Route path="/:id" element={<Page />} />
@@ -20,7 +20,7 @@ function App() {
           <Route path="fiveday" element={<Page value="fiveday" />} />
           <Route path="airquality" element={<Page value="airquality" />} /> */}
         </Routes>
-      </div>
+      </>
       <Footer />
     </Router>
   );
