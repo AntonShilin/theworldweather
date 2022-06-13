@@ -5,15 +5,14 @@ import City from "../../UI/City/City";
 class RecentCities extends React.Component {
   state = {};
   render() {
-    const recentCities = this.props.recentCities;
-    console.log(recentCities);
+    const recent = this.props.recent;
+    console.log(recent);
 
     return (
       <div>
-        {recentCities.length > 0 &&
-          recentCities.map((obj, i) => (
+        {recent.recentCities.length > 0 &&
+          recent.recentCities.map((obj, i) => (
             <City temp={obj.main.temp} cityName={obj.name} key={i} />
-            // <div key={i}>{i}</div>
           ))}
       </div>
     );
@@ -22,7 +21,7 @@ class RecentCities extends React.Component {
 
 const mapStateToProps = (store) => {
   return {
-    recentCities: store.recentCities.recentCities,
+    recent: store.recent,
   };
 };
 

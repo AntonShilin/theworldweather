@@ -1,6 +1,6 @@
 import {
-  SEARCHCURRENTWEATHERBYCITYNAME,
-  GETSEARCHCITYNAME,
+    GETWEATHERBYCOORDS,
+    ENTERCITYNAME,
 } from "../Types/RecentCitiesTypes.js";
 
 const recentCities = {
@@ -10,14 +10,14 @@ const recentCities = {
 
 export const recentCitiesReducer = (state = recentCities, action) => {
   switch (action.type) {
-    case SEARCHCURRENTWEATHERBYCITYNAME: {
+    case GETWEATHERBYCOORDS: {
       return {
         ...state,
         recentCities: [...state.recentCities, action.payload],
       };
     }
 
-    case GETSEARCHCITYNAME: {
+    case ENTERCITYNAME: {
       return {
         ...state,
         searchCityName: action.payload,

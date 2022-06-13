@@ -2,13 +2,13 @@ import React from "react";
 import styles from "./Search.module.css";
 import { connect } from "react-redux";
 import {
-  searchCurrentWeatherByCityName,
-  getSearchCityName,
+  searchWeatherByCityName,
+  enterCityName,
 } from "../../Actions/RecentCitiesActions.js";
 
 class Search extends React.Component {
   updateInputValue(evt) {
-    this.props.getSearchCityName(evt.target.value);
+    this.props.enterCityName(evt.target.value);
   }
 
   render() {
@@ -28,7 +28,7 @@ class Search extends React.Component {
             className={styles.btn}
             disabled={searchCityName !== null ? false : true}
             onClick={() =>
-              this.props.searchCurrentWeatherByCityName(searchCityName)
+              this.props.searchWeatherByCityName(searchCityName)
             }
           >
             Go
@@ -41,15 +41,15 @@ class Search extends React.Component {
 
 const mapStateToProps = (store) => {
   return {
-    searchCityName: store.recentCities.searchCityName,
+    searchCityName: store.recent.searchCityName,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    searchCurrentWeatherByCityName: (name) =>
-      dispatch(searchCurrentWeatherByCityName(name)),
-    getSearchCityName: (name) => dispatch(getSearchCityName(name)),
+    searchWeatherByCityName: (name) =>
+      dispatch(searchWeatherByCityName(name)),
+      enterCityName: (name) => dispatch(enterCityName(name)),
   };
 };
 

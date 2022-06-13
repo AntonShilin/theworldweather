@@ -8,7 +8,7 @@ import { recentCitiesReducer } from "../Reducer/RecentCitiesReducer.js";
 export const rootReducer = combineReducers({
   news: latestNewsReducer,
   location: locationReducer,
-  recentCities: recentCitiesReducer
+  recent: recentCitiesReducer
 });
 
 export default function configureStore() {
