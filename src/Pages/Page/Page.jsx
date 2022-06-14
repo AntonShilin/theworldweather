@@ -12,7 +12,7 @@ function Page() {
     return (
       <div className={styles.page}>
         <Today />
-        {/* <TodaysForecast /> */}
+        <TodaysForecast />
         {/* <DailyForecast /> */}
       </div>
     );

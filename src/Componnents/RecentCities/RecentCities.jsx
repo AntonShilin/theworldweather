@@ -8,12 +8,12 @@ class RecentCities extends React.Component {
     const recent = this.props.recent;
 
     return (
-      <div>
+      <>
         {recent.recentCities.length > 0 &&
           recent.recentCities.map((obj, i) => (
-            <City temp={obj.main.temp} cityName={obj.name} key={i} />
+            <City temp={obj.main.temp} city={obj.name} key={i} />
           ))}
-      </div>
+      </>
     );
   }
 }
