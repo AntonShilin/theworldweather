@@ -1,29 +1,25 @@
-import React, { Component } from "react";
+import React from "react";
 import style from "./DailyForecast.module.css";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-class DailyForecast extends Component {
-  state = {};
-
-  convertMillToDate(value) {
-    const dateInMs = value;
-    const date = new Date(dateInMs);
-  }
+class DailyForecast extends React.Component {
 
   render() {
-    if (this.props.weather === null) {
+    const recentCities = this.props.recentCities;
+    
+    if (recentCities.length === 0) {
       return null;
     }
 
     return (
       <div className={style.daily_forecast}>
-        {/* <header>
+        <header>
           <h2>Daily Forecast</h2>
         </header>
         <div className={style.daily_forecast_main}>
           <ul>
-            {this.props.weather.daily.map(
+            {recentCities[0].daily.map(
               (day, i) =>
                 i < 4 && (
                   <li key={i}>
@@ -41,7 +37,7 @@ class DailyForecast extends Component {
                       </div>
                       <div>
                         {day.rain ? (
-                          <span>Rain {Math.round(day.rain * 100)}%</span>
+                          <span>Rain {day.rain}%</span>
                         ) : (
                           <span>---</span>
                         )}
@@ -54,13 +50,14 @@ class DailyForecast extends Component {
         </div>
         <footer>
           <Link to="#">Next 10 Days</Link>
-        </footer> */}
+        </footer>
       </div>
     );
   }
 }
 
 const mapStateToProps = (store) => ({
+  recentCities: store.recent.recentCities,
 });
 
 const mapDispatchToProps = (dispatch) => {

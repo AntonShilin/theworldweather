@@ -13,7 +13,7 @@ function Page() {
       <div className={styles.page}>
         <Today />
         <TodaysForecast />
-        {/* <DailyForecast /> */}
+        <DailyForecast />
       </div>
     );
   }
