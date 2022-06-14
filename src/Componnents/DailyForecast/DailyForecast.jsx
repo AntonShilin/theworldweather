@@ -12,18 +12,18 @@ class DailyForecast extends Component {
   }
 
   render() {
-    if (this.props.dailyWeather === null) {
+    if (this.props.weather === null) {
       return null;
     }
 
     return (
       <div className={style.daily_forecast}>
-        <header>
+        {/* <header>
           <h2>Daily Forecast</h2>
         </header>
         <div className={style.daily_forecast_main}>
           <ul>
-            {this.props.dailyWeather.map(
+            {this.props.weather.daily.map(
               (day, i) =>
                 i < 4 && (
                   <li key={i}>
@@ -54,14 +54,13 @@ class DailyForecast extends Component {
         </div>
         <footer>
           <Link to="#">Next 10 Days</Link>
-        </footer>
+        </footer> */}
       </div>
     );
   }
 }
 
 const mapStateToProps = (store) => ({
-  dailyWeather: store.location.dailyWeather,
 });
 
 const mapDispatchToProps = (dispatch) => {

@@ -6,7 +6,6 @@ class RecentCities extends React.Component {
   state = {};
   render() {
     const recent = this.props.recent;
-    console.log(recent);
 
     return (
       <div>

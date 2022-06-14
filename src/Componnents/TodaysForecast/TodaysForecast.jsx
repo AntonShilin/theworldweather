@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 class TodaysForecast extends Component {
   state = {};
   render() {
-    if (this.props.todaysWeather === null || this.props.cityName === null) {
+    if (this.props.weather === null || this.props.cityName === null) {
       return null;
     }
 
@@ -17,33 +17,31 @@ class TodaysForecast extends Component {
         </header>
         <div className={style.todays_forecast_main}>
           <ul>
-            {Object.keys(this.props.todaysWeather.feels_like).map(
-              (timeOfDay, i) => (
-                <li key={i}>
-                  <Link to="#">
-                    <h3>{timeOfDay}</h3>
-                    <div>
-                      <span>
-                        {Math.round(this.props.todaysWeather.temp[timeOfDay])} &#176;
-                      </span>
-                    </div>
-                    <div>
-                      <img
-                        src={`http://openweathermap.org/img/wn/${this.props.todaysWeather.weather[0].icon}@2x.png`}
-                        alt="img"
-                      />
-                    </div>
-                    <div>
-                      {this.props.todaysWeather.rain ? (
-                        <span>Rain {Math.round(this.props.todaysWeather.rain * 100)}%</span>
-                      ) : (
-                        <span>---</span>
-                      )}
-                    </div>
-                  </Link>
-                </li>
-              )
-            )}
+            {this.props.weather.hourly.map((hour, i) => (
+              <li key={i}>
+                <Link to="#">
+                  <h3>{hour.dt}</h3>
+                  <div>
+                    <span>
+                      {/* {Math.round(this.props.todaysWeather.temp[timeOfDay])} &#176; */}
+                    </span>
+                  </div>
+                  <div>
+                    <img
+                      src={`http://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`}
+                      alt="img"
+                    />
+                  </div>
+                  <div>
+                    {hour.rain ? (
+                      <span>Rain {Math.round(hour.rain * 100)}%</span>
+                    ) : (
+                      <span>---</span>
+                    )}
+                  </div>
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
         <footer>
@@ -56,7 +54,7 @@ class TodaysForecast extends Component {
 
 const mapStateToProps = (store) => ({
   cityName: store.location.cityName,
-  todaysWeather: store.location.todaysWeather,
+  weather: store.location.weather,
 });
 
 const mapDispatchToProps = (dispatch) => {
