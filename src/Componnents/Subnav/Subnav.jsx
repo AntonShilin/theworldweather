@@ -16,11 +16,12 @@ class Subnav extends React.Component {
   }
   render() {
     const { items } = this.state;
+
     return (
       <div className={styles.subnav}>
         {items.map((obj, i) => (
-          <div className={styles.item} key={i}>
-            <NavLink to={obj.url} className={styles.link}>
+          <div className={styles.subnav_item} key={i}>
+            <NavLink to={obj.url} className={styles.subnav_item_link}>
               {obj.name}
             </NavLink>
           </div>

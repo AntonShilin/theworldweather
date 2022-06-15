@@ -7,17 +7,27 @@
   min-height: 3rem;
 }
 
-.hourly div:nth-of-type() {
+.hourly_header {
+  padding: 16px 26px 6px !important;
 }
 
-.hourly div:nth-of-type() h1 {
+.hourly_header h2 {
+  margin: 0 0 0.25rem 0;
+}
+
+.hourly_header h2 span {
+  font-size: 1rem;
+  padding-left: 4px;
+  font-weight: 400;
   color: #2b2b2b;
-  padding: 16px 26px;
 }
 
-.hourly div:nth-of-type() h1 div {
-  padding: 0 26px 21px;
+.hourly_header div span {
   font-size: 1rem;
   opacity: 0.65;
   color: #2d2d2d;
+}
+
+.hourly_main {
+  
 }

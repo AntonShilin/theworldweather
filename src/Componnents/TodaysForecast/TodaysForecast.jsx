@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import style from "./TodaysForecast.module.css";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import {ConvertToHours} from "../../UI/CovertDate/ConvertDate.jsx";
 
-class TodaysForecast extends Component {
+class TodaysForecast extends React.Component {
   state = {};
 
   render() {
@@ -25,7 +26,7 @@ class TodaysForecast extends Component {
                 i <= 3 && (
                   <li key={i}>
                     <Link to="#">
-                      <h3>{hour.dt}</h3>
+                      <h3><ConvertToHours dt={hour.dt}/></h3>
                       <div>
                         <span>{hour.temp} &#176;</span>
                       </div>

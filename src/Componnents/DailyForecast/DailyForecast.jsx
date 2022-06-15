@@ -2,6 +2,7 @@ import React from "react";
 import style from "./DailyForecast.module.css";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { ConvertToDay } from "../../UI/CovertDate/ConvertDate";
 
 class DailyForecast extends React.Component {
 
@@ -24,7 +25,7 @@ class DailyForecast extends React.Component {
                 i < 4 && (
                   <li key={i}>
                     <Link to="#">
-                      <h3>{ new Date(day.dt).toLocaleDateString()}</h3>
+                      <h3><ConvertToDay dt={day.dt}/></h3>
                       <div>
                         <span>{day.temp.max}&#176;</span>
                         <span>{day.temp.min}&#176;</span>

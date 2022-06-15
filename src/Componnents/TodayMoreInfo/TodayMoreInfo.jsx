@@ -6,7 +6,6 @@ class TodayMoreInfo extends Component {
     state = {  } 
     render() { 
       const info = this.props.info;
-      console.log(info)
 
         return (
             <div className={style.today}>

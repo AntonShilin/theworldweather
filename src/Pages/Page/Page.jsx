@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Today from "../../Componnents/Today/Today";
 import TodaysForecast from "../../Componnents/TodaysForecast/TodaysForecast";
 import DailyForecast from "../../Componnents/DailyForecast/DailyForecast";
+import Hourly from "../../Componnents/Hourly/Hourly";
 
 function Page() {
   let { id } = useParams();
@@ -14,6 +15,14 @@ function Page() {
         <Today />
         <TodaysForecast />
         <DailyForecast />
+      </div>
+    );
+  }
+
+  if (id === "hourly") {
+    return (
+      <div className={styles.page}>
+        <Hourly />
       </div>
     );
   }
